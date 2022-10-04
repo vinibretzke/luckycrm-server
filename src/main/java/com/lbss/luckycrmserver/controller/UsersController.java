@@ -1,7 +1,7 @@
 package com.lbss.luckycrmserver.controller;
 
 import com.lbss.luckycrmserver.model.UsersModel;
-import com.lbss.luckycrmserver.services.UsersServices;
+import com.lbss.luckycrmserver.security.services.UsersDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,30 +12,30 @@ import org.springframework.web.bind.annotation.*;
 public class UsersController {
 
     @Autowired
-    private UsersServices usersServices;
+    private UsersDetailsImpl usersDetailsImpl;
 
     @GetMapping("/list")
     public Iterable<UsersModel> listAllUsers() {
-        return usersServices.listAllUsers();
+        return usersDetailsImpl.listAllUsers();
     }
 
     @GetMapping("/list/{id}")
     public ResponseEntity<?> listUserById(@PathVariable Long id) {
-        return usersServices.listUserById(id);
+        return usersDetailsImpl.listUserById(id);
     }
 
     @PutMapping("/update-user")
     public ResponseEntity<?> updateUser(@RequestBody UsersModel usersModel, @PathVariable Long id) {
-        return usersServices.updateUser(usersModel, id);
+        return usersDetailsImpl.updateUser(usersModel, id);
     }
 
     @PostMapping("/add-user")
     public ResponseEntity<?> addNewUser(@RequestBody UsersModel usersModel) {
-        return usersServices.addUser(usersModel);
+        return usersDetailsImpl.addUser(usersModel);
     }
 
     @DeleteMapping("/delete-user/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        return usersServices.deleteUser(id);
+        return usersDetailsImpl.deleteUser(id);
     }
 }

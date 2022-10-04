@@ -1,16 +1,15 @@
-package com.lbss.luckycrmserver.services;
+package com.lbss.luckycrmserver.security.services;
 
 import com.lbss.luckycrmserver.model.ResponseModel;
 import com.lbss.luckycrmserver.model.UsersModel;
 import com.lbss.luckycrmserver.repository.UsersRepository;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsersServices {
+public class UsersDetailsImpl {
 
     @Autowired
     private UsersRepository usersRepository;
