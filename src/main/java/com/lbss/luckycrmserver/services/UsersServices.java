@@ -50,7 +50,7 @@ public class UsersServices {
         } else if ( usersModel.getCpf() == null || usersModel.getCpf().isEmpty() ) {
             responseModel.setMessage("CPF is required");
             return new ResponseEntity<ResponseModel>(responseModel, HttpStatus.BAD_REQUEST);
-        } else if ( usersModel.getDateOfBirth() == null || usersModel.getDateOfBirth().isEmpty() ) {
+        } else if ( usersModel.getDateOfBirth() == null || usersModel.getDateOfBirth().toString().isEmpty() ) {
             responseModel.setMessage("Date of birth is required");
             return new ResponseEntity<ResponseModel>(responseModel, HttpStatus.BAD_REQUEST);
         } else {

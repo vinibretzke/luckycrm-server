@@ -3,6 +3,7 @@ package com.lbss.luckycrmserver.model;
 
 import javax.persistence.*;
 import java.security.MessageDigest;
+import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -17,7 +18,7 @@ public class UsersModel {
     private String email;
     private String phone;
     private String cpf;
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
 
     public Long getId() {
@@ -88,11 +89,11 @@ public class UsersModel {
         this.cpf = cpf;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
