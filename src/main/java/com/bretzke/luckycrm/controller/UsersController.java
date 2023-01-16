@@ -48,4 +48,17 @@ public class UsersController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Void> login(@RequestBody Users user) {
+        userService.login(user.getUsername(), user.getPassword());
+        //return token
+        return ResponseEntity.ok().build();
+    }
 }
