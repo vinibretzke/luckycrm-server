@@ -1,5 +1,4 @@
 package com.bretzke.luckycrm.model;
 
-public class Users {
-
+public class Sugestions {
 }
