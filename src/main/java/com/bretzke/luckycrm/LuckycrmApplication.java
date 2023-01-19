@@ -6,10 +6,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class LuckycrmApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(LuckycrmApplication.class, args);
 	}
-
-
 }
